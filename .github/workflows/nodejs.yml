@@ -10,8 +10,8 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
-        git-user-email: "ytzlax@gmail.com"
-        git-user-name: "ytzlax"
+        git-user-email: ytzlax@gmail.com
+        git-user-name: ytzlax
 
     steps:
       - uses: actions/checkout@master
