@@ -13,16 +13,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+        -
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Setup GIT
         run: |
           git config user.email "ytzlax@gmail.com"
           git config user.name "ytzlax"
+
+      - name: install,lint,test
+        run: |
+          npm ci --if-present
+          npm run test --if-present
+          npm run lint --if-present
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
+
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
