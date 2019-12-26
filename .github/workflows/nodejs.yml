@@ -10,8 +10,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
-        git-user-email: ytzlax@gmail.com
-        git-user-name: ytzlax
 
     steps:
       - uses: actions/checkout@master
@@ -23,14 +21,15 @@ jobs:
 
       - name: Setup GIT
         run: |
-          git config user.email ${{ matrix.git-user-email }}
-          git config user.name ${{ matrix.git-user-name }}
+          git config user.email "ytzlax@gmail.com"
+          git config user.name "ytzlax"
 
       - name: install,lint,test
         run: |
           npm ci --if-present
           npm run test --if-present
           npm run lint --if-present
+
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@master
 
