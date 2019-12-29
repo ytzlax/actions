@@ -26,9 +26,10 @@ jobs:
           git config user.name "ytzlax"
 
       - name: install,lint,test
+      # Before npm test yot need to config karma.conf.js to browsers: ['ChromeHeadless'] and singleRun: true
+
         run: |
           npm ci --if-present
-      # Before npm test yot need to config karma.conf.js to browsers: ['ChromeHeadless'] and singleRun: true
           npm run test --if-present
           npm run lint --if-present
       #
