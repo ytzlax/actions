@@ -21,12 +21,14 @@ jobs:
 
       - name: Setup GIT
         run: |
+      # Change to your git email and name
           git config user.email "ytzlax@gmail.com"
           git config user.name "ytzlax"
 
       - name: install,lint,test
         run: |
           npm ci --if-present
+      # Before npm test yot need to config karma.conf.js to browsers: ['ChromeHeadless'] and singleRun: true
           npm run test --if-present
           npm run lint --if-present
       #
