@@ -27,8 +27,7 @@ jobs:
       - name: lint,test
         run: |
       # Before you can run npm test you need to define the next property in karma.conf.js:
-      # browsers: ['ChromeHeadless'],
-      # singleRun: true
+      # browsers: ['ChromeHeadless'],singleRun: true
           npm run test --if-present
           npm run lint --if-present
 
