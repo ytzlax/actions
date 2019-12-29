@@ -21,7 +21,7 @@ jobs:
 
       - name: Setup GIT
         run: |
-      # Change to your git email and name
+      #Change to your git email and name
           git config user.email "ytzlax@gmail.com"
           git config user.name "ytzlax"
 
