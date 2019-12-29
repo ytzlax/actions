@@ -20,8 +20,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup GIT
+      # Change to your git email and name
         run: |
-      #Change to your git email and name
           git config user.email "ytzlax@gmail.com"
           git config user.name "ytzlax"
 
